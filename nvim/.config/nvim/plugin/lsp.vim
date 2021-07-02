@@ -1,9 +1,15 @@
 lua require'lspconfig'.clangd.setup{ on_attach = on_attach }
 lua require'lspconfig'.gopls.setup{ on_attach = on_attach }
 lua require'lspconfig'.tsserver.setup{ on_attach = on_attach }
+lua require'lspconfig'.pyright.setup{ on_attach = on_attach }
 
 set completeopt=menuone,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+let g:symbols_outline = {
+    \ "highlight_hovered_item": v:true,
+    \ "show_guides": v:true,
+\ }
 
 nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
@@ -37,5 +43,4 @@ let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:true
 
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-
+inoremap <silent><expr> <CR>   compe#confirm('<CR>')

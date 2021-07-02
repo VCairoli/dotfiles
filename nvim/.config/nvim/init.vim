@@ -12,8 +12,9 @@ Plug 'gruvbox-community/gruvbox'
 "LSP thingies
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
 
 call plug#end()
