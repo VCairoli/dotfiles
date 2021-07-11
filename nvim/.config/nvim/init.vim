@@ -37,7 +37,19 @@ let mapleader = " "
 " Vim remaps
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+nmap <leader><leader> <c-^>
 nnoremap <leader>pv :Ex<CR>
 inoremap <C-c> <esc>
+
+" global copy/paste clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+
+" Moving around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>l <C-l>
