@@ -10,12 +10,15 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'gruvbox-community/gruvbox'
 
 "LSP thingies
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
+
+" Master TPope
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -40,6 +43,7 @@ vnoremap K :m '<-2<CR>gv=gv
 nmap <leader><leader> <c-^>
 nnoremap <leader>pv :Ex<CR>
 inoremap <C-c> <esc>
+
 
 " global copy/paste clipboard
 nnoremap <leader>y "+y
