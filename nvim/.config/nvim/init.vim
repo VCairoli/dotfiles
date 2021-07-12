@@ -20,19 +20,34 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
+"colorschemes
+Plug 'tpope/vim-vividchalk'
+Plug 'jdsimcoe/hyper.vim'
+Plug 'ParamagicDev/vim-medic_chalk'
+Plug 'agude/vim-eldar'
 call plug#end()
 
+colorscheme medic_chalk
 
 " beloved gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-    if exists('+termguicolors')
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    endif
-let g:gruvbox_invert_selection='0'
+"let g:gruvbox_contrast_dark = 'hard'
+"    if exists('+termguicolors')
+"        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"    endif
+"let g:gruvbox_invert_selection='0'
+"
+"set background=dark
+"hi CursorLineNR guibg=None
+"highlight Normal guibg=none
+"highlight LineNr guifg=#5eacd3
+"hi SignColumn guibg=none
+"highlight netrwDir guifg=#5eacd3
+"highlight qfFileName guifg=#aed75f
+"highlight ColorColumn ctermbg=0 guibg=grey
+"hi TelescopeBorder guifg=#5eacd
 
-colorscheme gruvbox
-highlight Normal guibg=none
+"highlight Normal guibg=none
 "highlight Normal ctermbg=none
 
 let mapleader = " "

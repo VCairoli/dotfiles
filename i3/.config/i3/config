@@ -55,6 +55,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Return exec alacritty 
 bindsym $mod+d exec rofi -theme glass -show-icons -lines 6 -width 60 -location 0 -show drun -columns
 bindsym $mod+Shift+e exec rofi -theme glass -lines 3 -width 60 -location 0 -show power-menu -modi "power-menu:rofi-power-menu --confirm=lockscreen --no-symbols --choices=shutdown/reboot/logout"
+bindsym $mod+Shift+s exec systemctl --no-wall poweroff
 
 ############## WORKSPACES ##################3
 set $ws1     "1"
