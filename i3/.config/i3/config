@@ -5,10 +5,17 @@ font pango:JetBrains Mono 10
 ######### AUTOSTARTS ############
 exec --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/dragon.jpg"
 exec  --no-startup-id picom -b  --vsync --experimental-backends 
-exec --no-startup-id polybar mybar -r
+#exec --no-startup-id polybar mybar -r
 exec_always --no-startup-id "setxkbmap -layout br "
 exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
 exec_always --no-startup-id "xinput --set-prop 13 'libinput Accel Speed' -0.9"
+
+######## I3BAR ######
+bar {
+    status_command i3status
+    tray_output primary
+    separator_symbol "|"
+}
 
 
 
@@ -18,8 +25,8 @@ exec_always --no-startup-id "xinput --set-prop 13 'libinput Accel Speed' -0.9"
 bindsym --release $mod+Sys_Req exec --no-startup-id 'imgur-screenshot'
 
 #AUDIO SETUP
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -120,9 +127,9 @@ client.focused #d79921 #285577 #ffffff #fabd2f #d79921
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # i3-gaps
-gaps inner  5
-gaps outer  5
-gaps top    5
+#gaps inner  0
+#gaps outer  0
+#gaps top    0
 
 # Titlebar
 for_window [class="^.*"] border pixel 2
@@ -151,5 +158,5 @@ for_window [class="Spotify"] move container to workspace 3
     #exec i3-msg 'workspace2; exec discord; workspace 1'
     
 ## executando o terminal + navegador uma vez no workspace 1 ##
-exec --no-startup-id i3-msg 'workspace 1; exec alacritty;'
 exec --no-startup-id i3-msg 'workspace 1; exec brave;'
+exec --no-startup-id i3-msg 'workspace 1; exec alacritty;'

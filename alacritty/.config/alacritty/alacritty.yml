@@ -3,6 +3,14 @@ font:
   normal:
     family: JetBrains Mono
     style: Regular
+
+  bold:
+    family: JetBrains Mono
+    style: Bold
+
+  italic:
+    family: JetBrains Mono
+    style: Italic
     
   size: 11.25
 
@@ -65,11 +73,41 @@ schemes:
       cyan: "#427b58"
       white: "#928374"
 
-    medic_chalk: &medic_chalk
+  medic_chalk: &medic_chalk
+    primary:
+      background: &medic_chalk_bg '#000000'
+      foreground: '#ffffff'
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: CellForeground
+    selection:
+      text: CellBackground
+      background: CellForeground
+    normal:
+      black: *medic_chalk_bg
+      red: "#e50000"
+      green: "#33aa00"
+      yellow: "#ffcc00"
+      blue: "#110077"
+      magenta: "#9933cc"
+      cyan: "#44b4cc"
+      white: "#eeeeee"
+    bright:
+      black: "#928374"
+      red: "#ff0000"
+      green: "#66ff00"
+      yellow: "#ffff00"
+      blue: "#0000cc"
+      magenta: "#ff00ff"
+      cyan: "#00ffff"
+      white: "#ddeeff"
 
-background_opacity: 0.9
+background_opacity: 1
 
-colors: *gruvbox
+colors: *medic_chalk
 
 key_bindings:
   # Vi Mode
