@@ -91,18 +91,18 @@ schemes:
       red: "#e50000"
       green: "#33aa00"
       yellow: "#ffcc00"
-      blue: "#110077"
+      blue: "#44b4cc"
       magenta: "#9933cc"
-      cyan: "#44b4cc"
+      cyan: "#f63700"
       white: "#eeeeee"
     bright:
       black: "#928374"
       red: "#ff0000"
       green: "#66ff00"
       yellow: "#ffff00"
-      blue: "#0000cc"
+      blue: "#00ffff"
       magenta: "#ff00ff"
-      cyan: "#00ffff"
+      cyan: "#ff6600"
       white: "#ddeeff"
 
 background_opacity: 1
