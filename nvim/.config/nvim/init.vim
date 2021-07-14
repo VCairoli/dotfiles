@@ -6,9 +6,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-"color theme
-Plug 'gruvbox-community/gruvbox'
-
 "LSP thingies
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
@@ -21,6 +18,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
 "colorschemes
+Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-vividchalk'
 Plug 'jdsimcoe/hyper.vim'
 Plug 'ParamagicDev/vim-medic_chalk'
@@ -36,15 +34,14 @@ colorscheme medic_chalk
 "        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "    endif
 "let g:gruvbox_invert_selection='0'
-"
 "set background=dark
 "hi CursorLineNR guibg=None
 "highlight Normal guibg=none
 "highlight LineNr guifg=#5eacd3
 "hi SignColumn guibg=none
 "highlight netrwDir guifg=#5eacd3
-"highlight qfFileName guifg=#aed75f
 "highlight ColorColumn ctermbg=0 guibg=grey
+"highlight qfFileName guifg=#aed75f
 "hi TelescopeBorder guifg=#5eacd
 
 "highlight Normal guibg=none
