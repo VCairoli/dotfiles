@@ -37,15 +37,16 @@ colorscheme medic_chalk
 "set background=dark
 "hi CursorLineNR guibg=None
 "highlight Normal guibg=none
-"highlight LineNr guifg=#5eacd3
 "hi SignColumn guibg=none
 "highlight netrwDir guifg=#5eacd3
-"highlight ColorColumn ctermbg=0 guibg=grey
 "highlight qfFileName guifg=#aed75f
 "hi TelescopeBorder guifg=#5eacd
 
+"highlight LineNr guibg=0 
 "highlight Normal guibg=none
 "highlight Normal ctermbg=none
+
+highlight ColorColumn ctermbg=0 guibg=grey
 
 let mapleader = " "
 
