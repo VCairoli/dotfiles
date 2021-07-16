@@ -42,11 +42,11 @@ colorscheme medic_chalk
 "highlight qfFileName guifg=#aed75f
 "hi TelescopeBorder guifg=#5eacd
 
-"highlight LineNr guibg=0 
 "highlight Normal guibg=none
 "highlight Normal ctermbg=none
 
-highlight ColorColumn ctermbg=0 guibg=grey
+"highlight LineNr guibg=0 
+highlight ColorColumn guibg=grey
 
 let mapleader = " "
 
