@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-
 "the fzf
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -16,6 +15,7 @@ Plug 'kabouzeid/nvim-lspinstall'
 " Master TPope
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 
 "colorschemes
 Plug 'gruvbox-community/gruvbox'
@@ -23,6 +23,10 @@ Plug 'tpope/vim-vividchalk'
 Plug 'jdsimcoe/hyper.vim'
 Plug 'ParamagicDev/vim-medic_chalk'
 Plug 'agude/vim-eldar'
+
+" Misc
+Plug 'tommcdo/vim-lion'
+Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
 colorscheme medic_chalk
