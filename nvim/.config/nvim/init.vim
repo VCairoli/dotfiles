@@ -65,7 +65,7 @@ inoremap <C-c> <esc>
 " global copy/paste clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-nnoremap <leader>p "+p
+vnoremap <leader>p "_dP
 
 " Moving around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
