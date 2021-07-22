@@ -13,4 +13,4 @@ hi Define gui=bold
 hi Preproc gui=bold
 hi Special gui=bold
 hi Label gui=bold
-
+hi MatchParen gui=bold

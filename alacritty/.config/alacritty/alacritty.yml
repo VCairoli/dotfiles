@@ -1,7 +1,7 @@
 # Font configuration
 font:
   normal:
-    family: Misc Fixed
+    family: Misc fixed
     style: Regular
 
   bold:
