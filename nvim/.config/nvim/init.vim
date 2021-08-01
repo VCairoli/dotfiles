@@ -16,6 +16,7 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
 
 "colorschemes
 Plug 'gruvbox-community/gruvbox'
@@ -74,3 +75,15 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>l <C-l>
+
+" Keeping cursor centered
+nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo breakpoints
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
