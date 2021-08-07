@@ -3,7 +3,7 @@ font pango:Misc Fixed 10
 #font pango:DejaVu Sans Mono 8
 
 ######### AUTOSTARTS ############
-exec        --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/dragon.jpg"
+exec        --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/gruvboxmaybe.png"
 exec        --no-startup-id picom -b  --vsync --experimental-backends 
 exec_always --no-startup-id "setxkbmap -layout br "
 exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
