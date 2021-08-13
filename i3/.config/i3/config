@@ -50,8 +50,8 @@ bindsym $mod+w           kill
 bindsym $mod+Shift+c     reload
 bindsym $mod+r           mode "resize"
 bindsym $mod+Shift+r     restart
-bindsym $mod+d           exec rofi -theme glass -show-icons -lines 6 -width 60 -location 0 -show drun -columns
-bindsym $mod+Shift+e     exec rofi -theme glass -lines 3 -width 60 -location 0 -show power-menu -modi "power-menu:rofi-power-menu --confirm=lockscreen --no-symbols --choices=shutdown/reboot/logout"
+bindsym $mod+d           exec dmenu_run
+bindsym $mod+Shift+e     exec systemctl --no-wall reboot 
 bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
 
 # programs exec
