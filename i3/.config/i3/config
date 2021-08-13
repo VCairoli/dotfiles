@@ -50,7 +50,7 @@ bindsym $mod+w           kill
 bindsym $mod+Shift+c     reload
 bindsym $mod+r           mode "resize"
 bindsym $mod+Shift+r     restart
-bindsym $mod+d           exec dmenu_run
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+e     exec systemctl --no-wall reboot 
 bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
 
