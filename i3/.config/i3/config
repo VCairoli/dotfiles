@@ -8,8 +8,8 @@ exec_always --no-startup-id "setxkbmap -layout br "
 exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
 exec_always --no-startup-id "xinput --set-prop 17 'libinput Accel Speed' -0.9"
 
-######## BINDINGS ###############
 
+######## BINDINGS ###############
 # Printscreen to imgur
 bindsym --release $mod+Sys_Req exec --no-startup-id 'imgur-screenshot'
 
@@ -38,7 +38,6 @@ bindsym $mod+e   layout toggle split
 bindsym $mod+o   split h
 bindsym $mod+v   split v
 bindsym $mod+f   fullscreen toggle
-
 bindsym $mod+Shift+space    floating toggle
 bindsym $mod+space          focus mode_toggle
 bindsym $mod+a              focus parent
@@ -56,6 +55,7 @@ bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
 bindsym $mod+b           exec brave
 bindsym $mod+Return      exec alacritty 
 bindsym $mod+Shift+d     exec jetbrains-toolbox
+
 
 ############## WORKSPACES ##################3
 set $ws1     "1"
@@ -115,12 +115,13 @@ hide_edge_borders smart_no_gaps
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-#### ASSIGNING TO WORKSPACES #####
+
+##### ASSIGNING TO WORKSPACES #####
 assign      [class="Discord"]        2
 assign      [class="qBittorrent"]    4
 for_window  [class="Spotify"]        move container to workspace 3
 
-# executando o terminal + navegador uma vez no workspace 1 
+# Terminal + Browser on workspace 1
 exec --no-startup-id i3-msg 'workspace 1; exec brave;'
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty;'
 
@@ -136,7 +137,7 @@ mode "resize" {
         bindsym $mod+r      mode "default"
 }
 
-######## I3BAR ######
+######## I3BAR ########
 bar {
     status_command i3status
         tray_output primary
