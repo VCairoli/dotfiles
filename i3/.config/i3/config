@@ -6,7 +6,7 @@ exec        --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/gruvboxmayb
 exec        --no-startup-id picom -b  --vsync --experimental-backends 
 exec_always --no-startup-id "setxkbmap -layout br "
 exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
-exec_always --no-startup-id "xinput --set-prop 17 'libinput Accel Speed' -0.9"
+exec_always --no-startup-id "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
 
 
 ######## BINDINGS ###############
@@ -128,14 +128,14 @@ exec --no-startup-id i3-msg 'workspace 1; exec alacritty;'
 # resize mode
 mode "resize" {
     bindsym h resize    shrink  width   10 px or 10 ppt
-        bindsym k resize    grow    height  10 px or 10 ppt
-        bindsym j resize    shrink  height  10 px or 10 ppt
-        bindsym l resize    grow    width   10 px or 10 ppt
-
-        bindsym Return      mode "default"
-        bindsym Escape      mode "default"
-        bindsym $mod+r      mode "default"
+    bindsym k resize    grow    height  10 px or 10 ppt
+    bindsym j resize    shrink  height  10 px or 10 ppt
+    bindsym l resize    grow    width   10 px or 10 ppt
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
+    bindsym $mod+r      mode "default"
 }
+
 
 ######## I3BAR ########
 bar {
