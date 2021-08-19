@@ -1,7 +1,7 @@
-lua require'lspconfig'.clangd.setup{ on_attach = on_attach }
-lua require'lspconfig'.gopls.setup{ on_attach = on_attach }
-lua require'lspconfig'.tsserver.setup{ on_attach = on_attach }
-lua require'lspconfig'.pyright.setup{ on_attach = on_attach }
+lua require("lspconfig").clangd.setup{ on_attach = on_attach }
+lua require("lspconfig").gopls.setup{ on_attach = on_attach }
+lua require("lspconfig").tsserver.setup{ on_attach = on_attach }
+lua require("lspconfig").pyright.setup{ on_attach = on_attach }
 
 set completeopt=menuone,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']

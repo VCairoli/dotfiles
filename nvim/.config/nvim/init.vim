@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+
 "the fzf
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -50,7 +51,7 @@ colorscheme medic_chalk
 "highlight Normal guibg=none
 "highlight Normal ctermbg=none
 
-"highlight LineNr guibg=0 
+highlight LineNr guibg=none
 highlight ColorColumn guibg=grey
 
 let mapleader = " "
@@ -87,3 +88,10 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
+
+" autocommands
+augroup whitespaces
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+augroup END
