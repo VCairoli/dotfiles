@@ -32,26 +32,10 @@ Plug 'tommcdo/vim-lion'
 Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
+" treesitter ( highlight not working) and statusline theme
+lua require'nvim-treesitter.configs'.setup { incremental_selection = { enable = true }, textobjects = { enable = true }, indentation = { enable = true }}
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
-colorscheme gruvbox
-lua require'nvim-treesitter.configs'.setup{ incremental_selection = { enable = true }, textobjects = { enable = true }, indent = { enable = true}}
-let g:gruvbox_contrast_dark = 'hard'
-if exists('+termguicolors')
-    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
-set background=dark " for the dark version
-let g:gruvbox_invert_selection='0'
-highlight ColorColumn ctermbg=0 guibg=grey
-hi SignColumn guibg=none
-hi CursorLineNR guibg=None
-highlight netrwDir guifg=#5eacd3
-highlight qfFileName guifg=#aed75f
-hi TelescopeBorder guifg=#5eacd
-highlight LineNr guifg=#ffffff
-hi Normal guibg=None
 
 let mapleader = " "
 

@@ -3,7 +3,7 @@ font pango:Misc Fixed 10
 
 ######### AUTOSTARTS ############
 exec        --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/gruvboxmaybe.png"
-exec        --no-startup-id picom -b  --vsync --experimental-backends 
+exec        --no-startup-id picom -b  --vsync --experimental-backends
 exec_always --no-startup-id "setxkbmap -layout br "
 exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
 exec_always --no-startup-id "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
@@ -48,12 +48,12 @@ bindsym $mod+Shift+c     reload
 bindsym $mod+r           mode "resize"
 bindsym $mod+Shift+r     restart
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+Shift+e     exec systemctl --no-wall reboot 
+bindsym $mod+Shift+e     exec systemctl --no-wall reboot
 bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
 
 # programs exec
 bindsym $mod+b           exec brave
-bindsym $mod+Return      exec alacritty 
+bindsym $mod+Return      exec alacritty
 bindsym $mod+Shift+d     exec jetbrains-toolbox
 
 
@@ -94,7 +94,7 @@ bindsym $mod+Shift+9 move container to workspace number  $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Focused Window border color
-# class        border  backgr  text   indicator child_border 
+# class        border  backgr  text   indicator child_border
 client.focused #d79921 #285577 #ffffff #fabd2f #d79921
 
 # Use pactl to adjust volume in PulseAudio.
