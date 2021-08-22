@@ -13,6 +13,9 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
 
+" TreeSitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " Master TPope
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -32,27 +35,27 @@ Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
 colorscheme medic_chalk
+highlight LineNr guibg=none
+highlight ColorColumn guibg=grey
+highlight StatusLine guibg=grey
 
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }, indent = { enable = true}}
 " beloved gruvbox
+"let g:gruvbox_invert_selection='0'
 "let g:gruvbox_contrast_dark = 'hard'
 "    if exists('+termguicolors')
 "        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "    endif
-"let g:gruvbox_invert_selection='0'
 "set background=dark
 "hi CursorLineNR guibg=None
-"highlight Normal guibg=none
 "hi SignColumn guibg=none
+"hi TelescopeBorder guifg=#5eacd
+"highlight Normal guibg=none
 "highlight netrwDir guifg=#5eacd3
 "highlight qfFileName guifg=#aed75f
-"hi TelescopeBorder guifg=#5eacd
-
 "highlight Normal guibg=none
 "highlight Normal ctermbg=none
-
-highlight LineNr guibg=none
-highlight ColorColumn guibg=grey
 
 let mapleader = " "
 
