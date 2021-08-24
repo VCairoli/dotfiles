@@ -12,6 +12,11 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
 
+" Snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rafamadriz/friendly-snippets'
+
 " TreeSitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -34,6 +39,7 @@ call plug#end()
 
 " treesitter ( highlight not working) and statusline theme
 lua require'nvim-treesitter.configs'.setup { incremental_selection = { enable = true }, textobjects = { enable = true }, indentation = { enable = true }}
+
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
 
