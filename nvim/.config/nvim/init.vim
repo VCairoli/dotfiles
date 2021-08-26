@@ -35,11 +35,11 @@ Plug 'vim-airline/vim-airline-themes'
 " Misc
 Plug 'tommcdo/vim-lion'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 " treesitter ( highlight not working) and statusline theme
 lua require'nvim-treesitter.configs'.setup { incremental_selection = { enable = true }, textobjects = { enable = true }, indentation = { enable = true }}
-
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
 
