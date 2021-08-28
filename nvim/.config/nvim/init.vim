@@ -36,6 +36,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tommcdo/vim-lion'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'darrikonn/vim-gofmt'
 call plug#end()
 
 " treesitter (highlight not enabled to this colorscheme) and statusline theme
