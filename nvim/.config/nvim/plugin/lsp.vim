@@ -1,10 +1,24 @@
-lua require("lspconfig").clangd.setup{ on_attach = on_attach }
-lua require("lspconfig").gopls.setup{ on_attach = on_attach }
-lua require("lspconfig").tsserver.setup{ on_attach = on_attach }
-lua require("lspconfig").pyright.setup{ on_attach = on_attach }
-lua require("lspconfig").html.setup{ on_attach = on_attach }
-lua require("lspconfig").cssls.setup{ on_attach = on_attach }
-lua require("lspconfig").intelephense.setup{ on_attach = on_attach }
+lua <<EOF
+lspconfig = require "lspconfig"
+lspconfig.gopls.setup {
+  cmd = {"gopls", "serve"},
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+}
+
+require'lspconfig'.clangd.setup{ on_attach = on_attach }
+require'lspconfig'.tsserver.setup{ on_attach = on_attach }
+require'lspconfig'.pyright.setup{ on_attach = on_attach }
+require'lspconfig'.html.setup{ on_attach = on_attach }
+require'lspconfig'.cssls.setup{ on_attach = on_attach }
+require'lspconfig'.intelephense.setup{ on_attach = on_attach }
+EOF
 
 set completeopt=menuone,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
