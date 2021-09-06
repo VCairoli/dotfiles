@@ -1,5 +1,5 @@
 set $mod Mod1
-font pango:Misc Fixed 10
+font pango:Misc Fixed 9
 
 ######### AUTOSTARTS ############
 exec        --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/gruvboxmaybe.png"
