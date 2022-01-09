@@ -8,7 +8,6 @@ exec_always --no-startup-id "setxkbmap -layout br "
 exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
 exec_always --no-startup-id "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
 
-
 ######## BINDINGS ###############
 # Printscreen to imgur
 bindsym --release $mod+Sys_Req exec --no-startup-id 'imgur-screenshot'
@@ -52,10 +51,9 @@ bindsym $mod+Shift+e     exec systemctl --no-wall reboot
 bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
 
 # programs exec
-bindsym $mod+b           exec brave
+bindsym $mod+b           exec firefox
 bindsym $mod+Return      exec alacritty
 bindsym $mod+Shift+d     exec jetbrains-toolbox
-
 
 ############## WORKSPACES ##################3
 set $ws1     "1"
@@ -95,7 +93,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Focused Window border color
 # class        border  backgr  text   indicator child_border
-client.focused #00ff00 #285577 #ffffff #fabd2f #00ff00
+client.focused #00ff00 #285577 #ffffff #00f000 #00ff00
 
 #Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -115,14 +113,13 @@ hide_edge_borders smart_no_gaps
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-
 ##### ASSIGNING TO WORKSPACES #####
 assign      [class="Discord"]        2
 assign      [class="qBittorrent"]    4
 for_window  [class="Spotify"]        move container to workspace 3
 
 # Terminal + Browser on workspace 1
-exec --no-startup-id i3-msg 'workspace 1; exec brave;'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty;'
 
 # resize mode
@@ -135,7 +132,6 @@ mode "resize" {
     bindsym Escape      mode "default"
     bindsym $mod+r      mode "default"
 }
-
 
 ######## I3BAR ########
 bar {

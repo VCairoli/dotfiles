@@ -5,16 +5,23 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-"LSP thingies
+" LSP thingies
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'onsails/lspkind-nvim'
+Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
-Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
 
 " Snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
 
 " TreeSitter
@@ -26,7 +33,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 
-"colorschemes
+" Colorschemes
 Plug 'gruvbox-community/gruvbox'
 Plug 'ParamagicDev/vim-medic_chalk'
 Plug 'vim-airline/vim-airline'
@@ -37,14 +44,26 @@ Plug 'tommcdo/vim-lion'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'darrikonn/vim-gofmt'
+Plug 'sbdchd/neoformat'
 call plug#end()
 
-" treesitter (highlight not enabled to this colorscheme) and statusline theme
+" Treesitter (highlight not enabled to this colorscheme) and statusline theme
 lua require'nvim-treesitter.configs'.setup { incremental_selection = { enable = true }, textobjects = { enable = true }, indentation = { enable = true }}
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
 
 let mapleader = " "
+
+
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+imap <silent><expr> <C-N> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-N>'
+smap <silent><expr> <C-N> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-N>'
+
 
 " Vim remaps
 vnoremap J :m '>+1<CR>gv=gv
@@ -52,16 +71,16 @@ vnoremap K :m '<-2<CR>gv=gv
 nmap <leader><leader> <c-^>
 nnoremap <leader>pv :Ex<CR>
 inoremap <C-c> <esc>
+nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>rp :resize 100<CR>
 
 " global copy/paste clipboard
 nnoremap <leader>y "+y
-vnoremap <leader>p "_dP
+vnoremap <leader>y "+y
+xnoremap <leader>p "_dP
 
-" Moving around splits with <c-hjkl>
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+" opening splits
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>l <C-l>
 
@@ -80,6 +99,7 @@ inoremap ? ?<c-g>u
 " autocommands
 augroup whitespaces
     autocmd!
+    autocmd BufWritePre lua,cpp,c,h,hpp,cxx,cc Neoformat
     autocmd BufWritePre * %s/\s\+$//e
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
