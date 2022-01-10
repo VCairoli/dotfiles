@@ -45,6 +45,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'darrikonn/vim-gofmt'
 Plug 'sbdchd/neoformat'
+Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 " Treesitter (highlight not enabled to this colorscheme) and statusline theme
