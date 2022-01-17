@@ -2,8 +2,8 @@ set $mod Mod1
 font pango:Misc Fixed 9
 
 ######### AUTOSTARTS ############
-exec        --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/gruvboxmaybe.png"
-exec        --no-startup-id picom -b  --vsync --experimental-backends
+exec --no-startup-id "feh --bg-fill $HOME/dotfiles/wallpapers/gruvboxmaybe.png"
+exec --no-startup-id picom -b  --vsync --experimental-backends
 exec --no-startup-id "setxkbmap -layout br"
 exec --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
 exec --no-startup-id "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
@@ -114,13 +114,13 @@ hide_edge_borders smart_no_gaps
 floating_modifier $mod
 
 ##### ASSIGNING TO WORKSPACES #####
-assign      [class="Discord"]        2
+assign      [class="discord"]        3
 assign      [class="qBittorrent"]    4
 for_window  [class="Spotify"]        move container to workspace 3
 
 # Terminal + Browser on workspace 1
-exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty;'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
 
 # resize mode
 mode "resize" {
