@@ -2,7 +2,8 @@ set $mod Mod1
 font pango:Misc Fixed 9
 
 ######### AUTOSTARTS ############
-exec "xrandr --output DP-0 --mode 1920x1080 --rate 144.00"
+exec "xrandr --output DP-0 --mode 1920x1080 --rate 165.00"
+exec "xrandr --output DP-4 --mode 1920x1080 --left-of DP-0 --rate 144.00"
 exec picom -b  --vsync --experimental-backends
 exec "setxkbmap -layout br"
 exec "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
@@ -46,7 +47,7 @@ bindsym $mod+w           kill
 bindsym $mod+Shift+c     reload
 bindsym $mod+r           mode "resize"
 bindsym $mod+Shift+r     restart
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec      i3-dmenu-desktop
 bindsym $mod+Shift+e     exec systemctl --no-wall reboot
 bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
 

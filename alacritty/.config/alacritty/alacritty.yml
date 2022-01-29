@@ -105,7 +105,7 @@ schemes:
       cyan: "#ff6600"
       white: "#ddeeff"
 
-background_opacity: 1
+window.opacity: 1
 
 colors: *gruvbox
 
