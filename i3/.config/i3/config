@@ -120,7 +120,6 @@ assign      [class="qBittorrent"]    4
 for_window  [class="Spotify"]        move container to workspace 3
 
 # Terminal + Browser on workspace 1
-exec --no-startup-id i3-msg 'workspace 1; exec alacritty;'
 exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
 
 # resize mode
