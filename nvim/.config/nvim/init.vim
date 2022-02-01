@@ -49,12 +49,15 @@ Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 " Treesitter (highlight not enabled to this colorscheme) and statusline theme
-lua require'nvim-treesitter.configs'.setup { incremental_selection = { enable = true }, textobjects = { enable = true }, indentation = { enable = true }}
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }, indentation = { enable = true }}
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
 
-let mapleader = " "
+if executable('rg')
+  let g:rg_derive_root='true'
+endif
 
+let mapleader = " "
 
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
