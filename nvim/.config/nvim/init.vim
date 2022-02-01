@@ -36,8 +36,6 @@ Plug 'tpope/vim-repeat'
 " Colorschemes
 Plug 'gruvbox-community/gruvbox'
 Plug 'ParamagicDev/vim-medic_chalk'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Misc
 Plug 'tommcdo/vim-lion'
@@ -50,8 +48,6 @@ call plug#end()
 
 " Treesitter (highlight not enabled to this colorscheme) and statusline theme
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }, indentation = { enable = true }}
-let g:airline_powerline_fonts = 1
-let g:airline_theme='simple'
 
 if executable('rg')
   let g:rg_derive_root='true'
