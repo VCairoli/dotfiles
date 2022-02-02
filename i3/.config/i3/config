@@ -11,7 +11,7 @@ exec "feh --bg-fill $HOME/dotfiles/wallpapers/fall_scenery_painting-wallpaper-19
 
 ######## BINDINGS ###############
 # Printscreen to imgur
-bindsym --release $mod+Sys_Req exec --no-startup-id 'imgur-screenshot'
+bindsym --release $mod+Sys_Req exec 'imgur-screenshot'
 
 #AUDIO SETUP
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
