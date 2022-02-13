@@ -53,8 +53,6 @@ if executable('rg')
   let g:rg_derive_root='true'
 endif
 
-let mapleader = " "
-
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 
@@ -64,6 +62,7 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 imap <silent><expr> <C-N> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-N>'
 smap <silent><expr> <C-N> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-N>'
 
+let mapleader = " "
 
 " Vim remaps
 vnoremap J :m '>+1<CR>gv=gv
@@ -95,6 +94,9 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 " autocommands
 augroup whitespaces
