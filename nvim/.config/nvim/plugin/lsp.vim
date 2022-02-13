@@ -15,14 +15,7 @@ require("lspkind").init({
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			-- For `vsnip` user.
-			-- vim.fn["vsnip#anonymous"](args.body)
-
-			-- For `luasnip` user.
 			require("luasnip").lsp_expand(args.body)
-
-			-- For `ultisnips` user.
-			-- vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
 	mapping = {
@@ -46,25 +39,34 @@ cmp.setup({
         end
     },
 
-	sources = {
-        -- tabnine completion? yayaya
-
-        -- { name = "cmp_tabnine" },
-
+	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 
-		-- For vsnip user.
-		-- { name = 'vsnip' },
-
-		-- For luasnip user.
 		{ name = "luasnip" },
-
-		-- For ultisnips user.
-		-- { name = 'ultisnips' },
-
+    },   {
 		{ name = "buffer" },
-	},
+	})
 })
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+
+local function config(_config)
+  return vim.tbl_deep_extend("force", {
+          capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  }, _config or {})
+end
 
 local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
@@ -89,11 +91,6 @@ local snippets_paths = function()
 	return paths
 end
 
-local function config(_config)
-  return vim.tbl_deep_extend("force", {
-          capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  }, _config or {})
-end
 
 lspconfig = require("lspconfig")
 lspconfig.gopls.setup {
@@ -125,13 +122,13 @@ EOF
 
 set completeopt=menuone,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-
 let g:symbols_outline = {
     \ "highlight_hovered_item": v:true,
     \ "show_guides": v:true,
 \ }
 
 nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>vs :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
