@@ -15,7 +15,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 
 " Snippets
 " Plug 'hrsh7th/vim-vsnip'
