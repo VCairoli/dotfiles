@@ -1,5 +1,5 @@
-lua <<EOF
-local cmp = require'cmp'
+lua << EOF
+local cmp = require("cmp")
 local source_mapping = {
 	buffer = "[Buffer]",
 	nvim_lsp = "[LSP]",
@@ -7,9 +7,9 @@ local source_mapping = {
 	cmp_tabnine = "[TN]",
 	path = "[Path]",
 }
-local lspkind = require'lspkind'
-require'lspkind'.init({
-    with_text = true,
+local lspkind = require("lspkind")
+require("lspkind").init({
+    mode = 'symbol_text',
 })
 
 cmp.setup({
@@ -19,7 +19,7 @@ cmp.setup({
 			-- vim.fn["vsnip#anonymous"](args.body)
 
 			-- For `luasnip` user.
-			require'luasnip'.lsp_expand(args.body)
+			require("luasnip").lsp_expand(args.body)
 
 			-- For `ultisnips` user.
 			-- vim.fn["UltiSnips#Anon"](args.body)
@@ -66,7 +66,7 @@ cmp.setup({
 	},
 })
 
-local tabnine = require'cmp_tabnine.config'
+local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
     max_lines = 1000,
     max_num_results = 20,
@@ -89,8 +89,13 @@ local snippets_paths = function()
 	return paths
 end
 
+local function config(_config)
+  return vim.tbl_deep_extend("force", {
+          capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  }, _config or {})
+end
 
-lspconfig = require'lspconfig'
+lspconfig = require("lspconfig")
 lspconfig.gopls.setup {
   cmd = {"gopls", "serve"},
   settings = {
@@ -103,13 +108,13 @@ lspconfig.gopls.setup {
   },
 }
 
-require'lspconfig'.clangd.setup{ on_attach = on_attach }
-require'lspconfig'.tsserver.setup{ on_attach = on_attach }
-require'lspconfig'.pyright.setup{ on_attach = on_attach }
-require'lspconfig'.html.setup{ on_attach = on_attach }
-require'lspconfig'.cssls.setup{ on_attach = on_attach }
-require'lspconfig'.intelephense.setup{ on_attach = on_attach }
-require'symbols-outline'.setup{}
+require("lspconfig").clangd.setup(config())
+require("lspconfig").tsserver.setup(config())
+require("lspconfig").pyright.setup(config())
+require("lspconfig").html.setup(config())
+require("lspconfig").cssls.setup(config())
+require("lspconfig").intelephense.setup(config())
+require("symbols-outline").setup{}
 require("luasnip.loaders.from_vscode").lazy_load({
 	paths = snippets_paths(),
 	include = nil, -- Load all languages
