@@ -111,6 +111,7 @@ require("lspconfig").pyright.setup(config())
 require("lspconfig").html.setup(config())
 require("lspconfig").cssls.setup(config())
 require("lspconfig").intelephense.setup(config())
+require("lspconfig").bashls.setup(config())
 require("symbols-outline").setup{}
 require("luasnip.loaders.from_vscode").lazy_load({
 	paths = snippets_paths(),
