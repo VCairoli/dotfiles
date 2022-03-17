@@ -36,6 +36,7 @@ Plug 'tpope/vim-repeat'
 " Colorschemes
 Plug 'gruvbox-community/gruvbox'
 Plug 'ParamagicDev/vim-medic_chalk'
+Plug 'Mofiqul/vscode.nvim'
 
 " Misc
 Plug 'tommcdo/vim-lion'
