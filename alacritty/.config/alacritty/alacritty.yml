@@ -1,15 +1,15 @@
 # Font configuration
 font:
   normal:
-    family: Roboto Mono
+    family: Jetbrains Mono NL
     style: Regular
 
   bold:
-    family: Roboto Mono
+    family: Jetbrains Mono NL
     style: Bold
 
   italic:
-    family: Roboto Mono
+    family: Jetbrains Mono NL
     style: Italic
 
   size: 11
