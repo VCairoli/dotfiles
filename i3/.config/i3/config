@@ -1,7 +1,7 @@
 set $mod Mod1
 font pango:Misc Fixed 9
 
-######### AUTOSTARTS ############
+################################### AUTOSTARTS #################################
 exec "xrandr --output DP-0 --mode 1920x1080 --rate 165.00"
 exec "xrandr --output DP-4 --mode 1920x1080 --left-of DP-0 --rate 144.00"
 exec picom -b  --vsync --experimental-backends
@@ -9,29 +9,29 @@ exec "setxkbmap -layout br"
 exec "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
 exec "feh --bg-fill $HOME/dotfiles/wallpapers/japanAesthetic.jpg"
 
-######## BINDINGS ###############
+################################### BINDINGS ###################################
 # Printscreen to imgur
 bindsym --release $mod+Sys_Req exec 'imgur-screenshot'
 
-#AUDIO SETUP
+# Audio setup
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# MOVEMENT
+# Movement
 bindsym $mod+h   focus left
 bindsym $mod+j   focus down
 bindsym $mod+k   focus up
 bindsym $mod+l   focus right
 
-# WINDOW SHIFTING
+# Window shifting
 bindsym $mod+Shift+h    move left
 bindsym $mod+Shift+j    move down
 bindsym $mod+Shift+k    move up
 bindsym $mod+Shift+l    move right
 
-# MODES
+# Modes
 bindsym $mod+s              layout stacking
 bindsym $mod+t              layout tabbed
 bindsym $mod+e              layout toggle split
@@ -42,7 +42,7 @@ bindsym $mod+Shift+space    floating toggle
 bindsym $mod+space          focus mode_toggle
 bindsym $mod+a              focus parent
 
-# i3 commands
+# I3 commands
 bindsym $mod+w           kill
 bindsym $mod+Shift+c     reload
 bindsym $mod+r           mode "resize"
@@ -51,12 +51,23 @@ bindsym $mod+d exec      i3-dmenu-desktop
 bindsym $mod+Shift+e     exec systemctl --no-wall reboot
 bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
 
-# programs exec
+# Default programs
 bindsym $mod+b           exec firefox
 bindsym $mod+Return      exec alacritty
 bindsym $mod+Shift+d     exec jetbrains-toolbox
 
-############## WORKSPACES ##################3
+# Resize mode
+mode "resize" {
+    bindsym h resize    shrink  width   10 px or 10 ppt
+    bindsym k resize    grow    height  10 px or 10 ppt
+    bindsym j resize    shrink  height  10 px or 10 ppt
+    bindsym l resize    grow    width   10 px or 10 ppt
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
+    bindsym $mod+r      mode "default"
+}
+
+################################### WORKSPACES #################################
 set $ws1     "1"
 set $ws2     "2"
 set $ws3     "3"
@@ -68,7 +79,7 @@ set $ws8     "8"
 set $ws9     "9"
 set $ws10   "10"
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace number  $ws1
 bindsym $mod+2 workspace number  $ws2
 bindsym $mod+3 workspace number  $ws3
@@ -80,7 +91,7 @@ bindsym $mod+8 workspace number  $ws8
 bindsym $mod+9 workspace number  $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number  $ws1
 bindsym $mod+Shift+2 move container to workspace number  $ws2
 bindsym $mod+Shift+3 move container to workspace number  $ws3
@@ -92,11 +103,31 @@ bindsym $mod+Shift+8 move container to workspace number  $ws8
 bindsym $mod+Shift+9 move container to workspace number  $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Focused Window border color
+# Workspaces bindings
+workspace 1 output primary
+workspace 2 output DP-4
+workspace 3 output DP-4
+workspace 4 output primary
+
+# Assign to workspace
+assign      [class="discord"]        3
+assign      [class="qBittorrent"]    4
+for_window  [class="Spotify"]        move container to workspace 3
+exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
+
+################################### I3BAR ######################################
+bar {
+    status_command i3status
+    tray_output primary
+    separator_symbol "|"
+}
+
+################################### MISC #######################################
+# Focused window border color
 # class        border  backgr  text   indicator child_border
 client.focused #00ff00 #285577 #ffffff #00f000 #00ff00
 
-#Use pactl to adjust volume in PulseAudio.
+# Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # Titlebar
@@ -113,35 +144,3 @@ hide_edge_borders smart_no_gaps
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-##### ASSIGNING TO WORKSPACES #####
-assign      [class="discord"]        3
-assign      [class="qBittorrent"]    4
-for_window  [class="Spotify"]        move container to workspace 3
-
-# Terminal + Browser on workspace 1
-exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
-
-# Workspaces bindings
-workspace 1 output primary
-workspace 2 output DP-4
-workspace 3 output DP-4
-workspace 4 output primary
-
-# resize mode
-mode "resize" {
-    bindsym h resize    shrink  width   10 px or 10 ppt
-    bindsym k resize    grow    height  10 px or 10 ppt
-    bindsym j resize    shrink  height  10 px or 10 ppt
-    bindsym l resize    grow    width   10 px or 10 ppt
-    bindsym Return      mode "default"
-    bindsym Escape      mode "default"
-    bindsym $mod+r      mode "default"
-}
-
-######## I3BAR ########
-bar {
-    status_command i3status
-    tray_output primary
-    separator_symbol "|"
-}
