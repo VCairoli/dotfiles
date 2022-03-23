@@ -18,6 +18,7 @@ bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFA
 bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+set $refresh_i3status killall -SIGUSR1 i3status
 
 # Movement
 bindsym $mod+h   focus left
@@ -123,15 +124,15 @@ bar {
 }
 
 ################################### MISC #######################################
+# Titlebar
+for_window [class="^.*"] border pixel 2
+
 # Focused window border color
 # class        border  backgr  text   indicator child_border
 client.focused #00ff00 #285577 #ffffff #00f000 #00ff00
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-
-# Titlebar
-for_window [class="^.*"] border pixel 2
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
@@ -142,5 +143,5 @@ smart_borders on
 # Hide edge borders only if there is one window with no gaps
 hide_edge_borders smart_no_gaps
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Leaving fullcreen with whichever app pops up
+popup_during_fullscreen leave_fullscreen
