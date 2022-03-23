@@ -122,6 +122,12 @@ for_window  [class="Spotify"]        move container to workspace 3
 # Terminal + Browser on workspace 1
 exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
 
+# Workspaces bindings
+workspace 1 output primary
+workspace 2 output DP-4
+workspace 3 output DP-4
+workspace 4 output primary
+
 # resize mode
 mode "resize" {
     bindsym h resize    shrink  width   10 px or 10 ppt
