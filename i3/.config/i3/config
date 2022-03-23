@@ -136,6 +136,6 @@ mode "resize" {
 ######## I3BAR ########
 bar {
     status_command i3status
-        tray_output primary
-        separator_symbol "|"
+    tray_output primary
+    separator_symbol "|"
 }
