@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-"the fzf
+" the fzf
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -75,12 +75,12 @@ nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 nnoremap <Leader>rp :resize 100<CR>
 
-" global copy/paste clipboard
+" Global copy/paste clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 xnoremap <leader>p "_dP
 
-" opening splits
+" Opening splits
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>l <C-l>
 
@@ -99,7 +99,7 @@ inoremap ? ?<c-g>u
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-" autocommands
+" Autocommands
 augroup whitespaces
     autocmd!
     autocmd BufWritePre lua,cpp,c,h,hpp,cxx,cc Neoformat
