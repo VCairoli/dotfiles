@@ -129,7 +129,6 @@ let g:symbols_outline = {
 \ }
 
 nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>vs :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
