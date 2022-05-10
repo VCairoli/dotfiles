@@ -45,6 +45,7 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'darrikonn/vim-gofmt'
 Plug 'sbdchd/neoformat'
 Plug 'ThePrimeagen/harpoon'
+Plug 'github/copilot.vim'
 call plug#end()
 
 " Treesitter (highlight not enabled to this colorscheme) and statusline theme
