@@ -85,6 +85,8 @@ export LANG=en_US.UTF-8
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export RUBY_ROOT=$HOME/.local/share/gem/ruby/3.0.0/bin
+export PATH=$PATH:$RUBY_ROOT
 
 
 # Preferred editor for local and remote sessions
