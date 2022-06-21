@@ -32,7 +32,6 @@ scrolling:
 
 tabspaces: 4
 
-
 schemes:
   # Colors (Gruvbox Dark but with black background)
   gruvbox: &gruvbox
