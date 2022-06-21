@@ -87,7 +87,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export RUBY_ROOT=$HOME/.local/share/gem/ruby/3.0.0/bin
 export PATH=$PATH:$RUBY_ROOT
-
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -128,6 +128,3 @@ export NVM_DIR="$HOME/.nvm"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(mcfly init zsh)"
 typeset -U PATH
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
