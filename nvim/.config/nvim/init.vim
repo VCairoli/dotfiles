@@ -37,6 +37,7 @@ Plug 'tpope/vim-repeat'
 Plug 'gruvbox-community/gruvbox'
 Plug 'ParamagicDev/vim-medic_chalk'
 Plug 'Mofiqul/vscode.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Misc
 Plug 'tommcdo/vim-lion'
