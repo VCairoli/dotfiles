@@ -49,8 +49,8 @@ bindsym $mod+Shift+c     reload
 bindsym $mod+r           mode "resize"
 bindsym $mod+Shift+r     restart
 bindsym $mod+d exec      i3-dmenu-desktop
-bindsym $mod+Shift+e     exec systemctl --no-wall reboot
-bindsym $mod+Shift+s     exec systemctl --no-wall poweroff
+bindsym $mod+Shift+e     exec systemctl reboot
+bindsym $mod+Shift+s     exec systemctl poweroff
 
 # Default programs
 bindsym $mod+b           exec firefox
@@ -135,13 +135,13 @@ client.focused #00ff00 #285577 #ffffff #00f000 #00ff00
 floating_modifier $mod
 
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+#smart_gaps on
 
 # Activate smart borders (always)
-smart_borders on
+#smart_borders on
 
 # Hide edge borders only if there is one window with no gaps
-hide_edge_borders smart_no_gaps
+#hide_edge_borders smart_no_gaps
 
 # Leaving fullcreen with whichever app pops up
 popup_during_fullscreen leave_fullscreen
