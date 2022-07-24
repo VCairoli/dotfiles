@@ -53,7 +53,7 @@ bindsym $mod+Shift+e     exec systemctl reboot
 bindsym $mod+Shift+s     exec systemctl poweroff
 
 # Default programs
-bindsym $mod+b           exec google-chrome
+bindsym $mod+b           exec firefox
 bindsym $mod+Return      exec alacritty
 bindsym $mod+Shift+d     exec jetbrains-toolbox
 
@@ -114,7 +114,7 @@ workspace 4 output primary
 assign      [class="discord"]        3
 assign      [class="qBittorrent"]    9
 for_window  [class="Spotify"]        move container to workspace 3
-exec --no-startup-id i3-msg 'workspace 1; exec google-chrome;'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
 
 ################################### I3BAR ######################################
 bar {
