@@ -119,6 +119,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim="nvim"
 [ -f "/home/cairoli/.ghcup/env" ] && source "/home/cairoli/.ghcup/env" # ghcup-env
 
 export NVM_DIR="$HOME/.nvm"
