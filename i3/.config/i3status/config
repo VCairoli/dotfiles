@@ -15,8 +15,8 @@ order += "memory"
 order += "tztime local"
 
 volume master {
-	format = " %volume "
-	device = " pulse "
+	format = "%volume "
+	device = "pulse"
 }
 
 ethernet _first_ {
