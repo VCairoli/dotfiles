@@ -1,6 +1,5 @@
-If ever using firefox, consider doing the following:
+Note to self when using firefox:
   - cp /firefox-override-configs/userChrome.css to /home/$USER/.mozilla/firefox/$PROFILE_PATH/chrome
   - navigate to about:config, search for 'userprof' and change the 'toolkit.legacyUserProfileCustomizations.stylesheets' to true.
 
 The reason being firefox acts weird when in fullscreen via i3wm, this prevents the toolbar from disappearing when in fullscreen.
-
