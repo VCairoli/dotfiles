@@ -15,25 +15,25 @@ order += "memory"
 order += "tztime local"
 
 volume master {
-	format = " %volume"
-	device = "pulse"
+	format = " %volume "
+	device = " pulse "
 }
 
 ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+        format_up = " E: (%speed) "
+        format_down = " E: down "
 }
 
 disk "/" {
-        format = "%used %avail"
+        format = " %used %avail "
 }
 
 memory {
-        format = " %used %available"
+        format = " %used %available "
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = " %Y-%m-%d %H:%M:%S"
+        format = " %Y-%m-%d %H:%M:%S "
 }
