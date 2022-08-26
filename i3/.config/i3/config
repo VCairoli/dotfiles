@@ -8,6 +8,7 @@ exec picom -b  --vsync --experimental-backends
 exec "setxkbmap -layout br"
 exec "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
 exec "feh --bg-fill $HOME/dotfiles/wallpapers/wallpapers/arch.png"
+exec "copyq"
 
 ################################### BINDINGS ###################################
 # Printscreen to imgur
@@ -115,6 +116,7 @@ assign      [class="discord"]        3
 assign      [class="qBittorrent"]    9
 for_window  [class="Spotify"]        move container to workspace 3
 exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
+exec --no-startup-id i3-msg 'workspace 2; exec google-chrome-stable;'
 
 ################################### I3BAR ######################################
 bar {
