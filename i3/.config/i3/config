@@ -116,7 +116,6 @@ assign      [class="discord"]        3
 assign      [class="qBittorrent"]    9
 for_window  [class="Spotify"]        move container to workspace 3
 exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
-exec --no-startup-id i3-msg 'workspace 2; exec google-chrome-stable;'
 
 ################################### I3BAR ######################################
 bar {
