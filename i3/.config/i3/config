@@ -9,6 +9,7 @@ exec "setxkbmap -layout br"
 exec "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
 exec "feh --bg-fill $HOME/dotfiles/wallpapers/wallpapers/arch.png"
 exec "copyq"
+exec "xset s off -dpms"
 
 ################################### BINDINGS ###################################
 # Printscreen to imgur
