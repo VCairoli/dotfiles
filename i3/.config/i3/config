@@ -12,7 +12,7 @@ exec "copyq"
 exec "xset s off -dpms"
 
 # HUION autostarts
-exec "xsetwacom set 'HUION Huion Tablet_H950P stylus' MapToOutput HEAD-0"
+exec "xsetwacom set 'HUION Huion Tablet_H950P Pen stylus' MapToOutput HEAD-0"
 
 ################################### BINDINGS ###################################
 # Printscreen to imgur
