@@ -4,7 +4,7 @@ highlight qfFileName guifg=#aed75f
 hi TelescopeBorder guifg=#5eacd
 hi SignColumn guibg=None
 let g:tokyonight_style = "night"
-colorscheme tokyonight
+colorscheme gruvbox
 highlight LineNr guifg=#ffffff guibg=None
 " let g:vscode_style = "dark"
 "hi Normal guibg=None guifg=#ffffff
