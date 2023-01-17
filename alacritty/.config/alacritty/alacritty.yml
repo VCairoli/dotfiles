@@ -138,7 +138,7 @@ schemes:
 
 window.opacity: 1
 
-colors: *gruvbox
+colors: *tokyonight
 
 key_bindings:
   # Vi Mode
