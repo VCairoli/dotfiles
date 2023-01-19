@@ -119,7 +119,9 @@ workspace 4 output primary
 assign      [class="discord"]        3
 assign      [class="qBittorrent"]    9
 for_window  [class="Spotify"]        move container to workspace 3
-exec --no-startup-id i3-msg 'workspace 1; exec firefox;'
+assign      [class="obsidian"]       8
+exec        --no-startup-id i3-msg   'workspace 1; exec firefox;'
+exec        i3-msg                   'workspace 8; exec obsidian;'
 
 ################################### I3BAR ######################################
 bar {
