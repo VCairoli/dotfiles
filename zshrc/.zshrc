@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH:$HOME/go/bin
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/cairoli/.oh-my-zsh"
@@ -82,19 +82,13 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export RUBY_ROOT=$HOME/.local/share/gem/ruby/3.0.0/bin
-export PATH=$PATH:$RUBY_ROOT
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+#else
+#  export EDITOR='nvim'
+#fi
 
 #Booting startx on startup
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
@@ -104,12 +98,12 @@ fi
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
+#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+#fi
+#if [[ ! "$SSH_AUTH_SOCK" ]]; then
+#    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+#fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -119,12 +113,10 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim"
-[ -f "/home/cairoli/.ghcup/env" ] && source "/home/cairoli/.ghcup/env" # ghcup-env
+#alias vim="nvim"
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-eval "$(mcfly init zsh)"
+#eval "$(mcfly init zsh)"
 typeset -U PATH
