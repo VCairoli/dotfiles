@@ -2,9 +2,9 @@ set $mod Mod1
 font pango:Misc Fixed 9
 
 ################################### AUTOSTARTS #################################
-exec "xrandr --output DP-0 --mode 1920x1080 --rate 165.00"
-exec "xrandr --output DP-4 --mode 1920x1080 --left-of DP-0 --rate 144.00"
-exec picom -b  --vsync --experimental-backends
+exec "xrandr --output DP-0 --mode 1920x1080 --primary --rate 165.00"
+exec "xrandr --output DP-4 --mode 1920x1080 --left-of DP-3 --rate 144.00"
+exec picom -b --experimental-backends
 exec "setxkbmap -layout br"
 exec "xinput --set-prop 'Kingsis Corporation ZOWIE Gaming mouse' 'libinput Accel Speed' -0.9"
 exec "feh --bg-fill $HOME/dotfiles/wallpapers/wallpapers/arch.png"
@@ -16,7 +16,7 @@ exec "xsetwacom set 'HUION Huion Tablet_H950P Pen stylus' MapToOutput HEAD-0"
 
 ################################### BINDINGS ###################################
 # Printscreen to imgur
-bindsym --release $mod+Sys_Req exec 'imgur-screenshot'
+bindsym --release $mod+Sys_Req exec "scrot -s $HOME/Pictures/%Y_%m_%d-%H:%M:%S.png"
 
 # Audio setup
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
@@ -110,10 +110,10 @@ bindsym $mod+Shift+9 move container to workspace number  $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Workspaces bindings
-workspace 1 output primary
+workspace 1 output DP-0
 workspace 2 output DP-4
 workspace 3 output DP-4
-workspace 4 output primary
+workspace 4 output DP-0
 
 # Assign to workspace
 assign      [class="discord"]        3
